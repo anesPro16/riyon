@@ -1,0 +1,177 @@
+/* --- Header --- */
+.pbl-header {
+  border-bottom: 1px solid #e5e7eb !important;
+  padding-bottom: 1rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+.pbl-badge {
+  font-size: .75rem !important;
+  letter-spacing: .5px !important;
+}
+
+/* --- Table --- */
+.table-responsive {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+}
+
+#pblTable {
+  min-width: 720px !important; /* trigger horizontal scroll on mobile */
+  border: 1px solid #dee2e6 !important;
+}
+
+#pblTable thead th,
+#pblTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#pblTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#quizTable {
+  min-width: 720px !important; /* trigger horizontal scroll on mobile */
+  border: 1px solid #dee2e6 !important;
+}
+
+#quizTable thead th,
+#quizTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#quizTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#questionTable {
+  min-width: 720px !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+#questionTable thead th,
+#questionTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#questionTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#submissionsTable {
+  min-width: 720px !important;
+  border: 1px solid #dee2e6 !important;
+}
+
+#submissionsTable thead th,
+#submissionsTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#submissionsTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#observasiTable {
+  min-width: 720px !important; /* trigger horizontal scroll on mobile */
+  border: 1px solid #dee2e6 !important;
+}
+
+#observasiTable thead th,
+#observasiTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#observasiTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+
+#uploadsTable {
+  min-width: 720px !important; /* trigger horizontal scroll on mobile */
+  border: 1px solid #dee2e6 !important;
+}
+
+#uploadsTable thead th,
+#uploadsTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#uploadsTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#esaiTable {
+  min-width: 720px !important; /* trigger horizontal scroll on mobile */
+  border: 1px solid #dee2e6 !important;
+}
+
+#esaiTable thead th,
+#esaiTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#esaiTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#rekapTable {
+  min-width: 720px !important; /* trigger horizontal scroll on mobile */
+  border: 1px solid #dee2e6 !important;
+}
+
+#rekapTable thead th,
+#rekapTable tbody td {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+#rekapTable tbody tr {
+  transition: background-color .2s ease, transform .15s ease !important;
+}
+
+#questionTable, #gradingTable {
+  min-width: 720px !important;
+}
+
+#questionTable thead th, #gradingTable thead th {
+  border: 1px solid #dee2e6 !important;
+  vertical-align: middle !important;
+  transition: background-color .2s ease !important;
+}
+
+.aksi{
+  /*width: 20%;*/
+}
+
+/* --- Buttons --- */
+.btn {
+  transition: all .2s ease !important;
+}
+
+.btn:hover {
+  transform: translateY(-1px) !important;
+}
+
+.btn-add-quiz {
+  box-shadow: 0 4px 12px rgba(13,110,253,.25) !important;
+}
+
+.btn-add-quiz:hover {
+  box-shadow: 0 6px 16px rgba(13,110,253,.35) !important;
+}
