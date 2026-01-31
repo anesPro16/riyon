@@ -535,3 +535,21 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+
+/*
+|--------------------------------------------------------------------------
+| Custom Autoloader untuk MY_ Classes di folder Core
+|--------------------------------------------------------------------------
+|
+| CodeIgniter 3 tidak otomatis meload file MY_ selain MY_Controller.
+| Script ini memaksa CI untuk mengecek folder core jika class dimulai dengan MY_.
+|
+*/
+spl_autoload_register(function ($class) {
+    if (strpos($class, 'MY_') === 0) {
+        if (file_exists(APPPATH . 'core/' . $class . '.php')) {
+            require_once APPPATH . 'core/' . $class . '.php';
+        }
+    }
+});

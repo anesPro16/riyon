@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 22, 2026 at 03:02 AM
+-- Generation Time: Jan 31, 2026 at 03:27 PM
 -- Server version: 8.0.30
 -- PHP Version: 7.4.33
 
@@ -41,7 +41,7 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`id`, `user_id`, `teacher_id`, `name`, `code`, `created_at`) VALUES
-('01KB6S6G7FHD6ZYZP8BKNNYBFF', '01K8WAF2VCSHCNQYZQNDQ0K806', '01KB4C6WZDNXRWB3SMFXSZ9NT1', '5a', '30D93B', '2025-11-29 10:06:11'),
+('01KB6S6G7FHD6ZYZP8BKNNYBFF', '01K8WAF2VCSHCNQYZQNDQ0K806', '01KB4C6WZDNXRWB3SMFXSZ9NT1', 'Kelas 5a', '30D93B', '2025-11-29 10:06:11'),
 ('01KB7B61CNTD2D91YRZ6P1GVCF', '01K8WAF2VCSHCNQYZQNDQ0K806', '01KB7B41WP5AAA8MZ0TVADNRF8', 'Kelas 6', 'E3810E', '2025-11-29 15:20:30');
 
 -- --------------------------------------------------------
@@ -64,7 +64,8 @@ CREATE TABLE `essays` (
 
 INSERT INTO `essays` (`essay_id`, `class_id`, `title`, `subjects`, `created_at`) VALUES
 ('01KBMBYS6A9ZPHATNRX3JH175T', '01KB6S6G7FHD6ZYZP8BKNNYBFF', 'test', 'test', '2025-12-04 16:44:08'),
-('01KDZGW9Z918WZXMCMWEZXFEJN', '01KB7B61CNTD2D91YRZ6P1GVCF', 'esai', 'PPKN', '2026-01-02 21:13:12');
+('01KDZGW9Z918WZXMCMWEZXFEJN', '01KB7B61CNTD2D91YRZ6P1GVCF', 'esai', 'PPKN', '2026-01-02 21:13:12'),
+('01KGA625K9EH604WPV832KAHXD', '01KB7B61CNTD2D91YRZ6P1GVCF', 'tugas esai', 'Matematika', '2026-01-31 21:07:13');
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,10 @@ CREATE TABLE `essay_questions` (
 --
 
 INSERT INTO `essay_questions` (`id`, `essay_id`, `question_number`, `question_text`, `created_at`) VALUES
-('01KDZMSG9VWTG989H9GHASSYH9', '01KDZGW9Z918WZXMCMWEZXFEJN', 1, 'apakah yang dimaksud', '2026-01-02 22:21:35');
+('01KFQFMH3H4D82VGR3DVGXVRGH', '01KDZGW9Z918WZXMCMWEZXFEJN', 3, 'siapakah penemu', '2026-01-24 14:48:57'),
+('01KFQFMH3H9EC1CV347VXH2NY1', '01KDZGW9Z918WZXMCMWEZXFEJN', 1, 'jelaskan proses', '2026-01-24 14:48:57'),
+('01KFQFMH3HP1F91EJZAPXMZZDW', '01KDZGW9Z918WZXMCMWEZXFEJN', 2, 'apa yang dimaksud dengan', '2026-01-24 14:48:57'),
+('01KGA62E1KQCA4V18JQQE4P214', '01KGA625K9EH604WPV832KAHXD', 1, '1+1=', '2026-01-31 21:07:21');
 
 -- --------------------------------------------------------
 
@@ -109,8 +113,8 @@ CREATE TABLE `essay_submissions` (
 --
 
 INSERT INTO `essay_submissions` (`id`, `essay_id`, `user_id`, `submission_content`, `grade`, `feedback`, `created_at`, `updated_at`) VALUES
-('01KDZMVC7QJZ196R44ETB0255C', '01KDZGW9Z918WZXMCMWEZXFEJN', '01K976AHZGDA70DMQ7M9MF6SHS', '1. fghjkl', 89, 'ok', '2026-01-02 22:22:36', '2026-01-05 15:38:46'),
-('01KE271BXT1983EMSQSR802ZZ2', '01KDZGW9Z918WZXMCMWEZXFEJN', '01K912FR1QZHEWJ6MCVK8WEK5V', '1. sesuatu', NULL, NULL, '2026-01-03 22:18:56', '2026-01-05 15:44:03');
+('01KE271BXT1983EMSQSR802ZZ2', '01KDZGW9Z918WZXMCMWEZXFEJN', '01K912FR1QZHEWJ6MCVK8WEK5V', '1. sesuatu', NULL, NULL, '2026-01-03 22:18:56', '2026-01-24 21:14:16'),
+('01KFWXCFGDYMKPPFGWG5H02Z2W', '01KDZGW9Z918WZXMCMWEZXFEJN', '01K976AHZGDA70DMQ7M9MF6SHS', '1. rtyj\r\n2.rtghj\r\n3.tghjk', 90, 'ok', '2026-01-26 17:25:26', '2026-01-26 17:29:04');
 
 -- --------------------------------------------------------
 
@@ -134,7 +138,7 @@ CREATE TABLE `evaluation` (
 
 INSERT INTO `evaluation` (`id`, `class_id`, `user_id`, `teacher_reflection`, `student_feedback`, `created_at`, `updated_at`) VALUES
 ('01KCN2MSA5ZM85XE1Q82TJSWVX', '01KB6S6G7FHD6ZYZP8BKNNYBFF', '01K912FR1QZHEWJ6MCVK8WEK5V', 'cukup baik', 'bagus', '2025-12-17 09:36:20', '2025-12-17 09:36:20'),
-('01KCPDGM5084MNRTZVRMEE9CWK', '01KB7B61CNTD2D91YRZ6P1GVCF', '01K976AHZGDA70DMQ7M9MF6SHS', 'bagus', 'terus semangat', '2025-12-17 22:05:32', '2026-01-02 12:24:07'),
+('01KCPDGM5084MNRTZVRMEE9CWK', '01KB7B61CNTD2D91YRZ6P1GVCF', '01K976AHZGDA70DMQ7M9MF6SHS', 'hasil yang baik', 'ayo terus semangat', '2025-12-17 22:05:32', '2026-01-31 21:08:39'),
 ('01KCQXHA9ZG7XGWWWNJD2CXE6P', '01KB7B61CNTD2D91YRZ6P1GVCF', '01K912FR1QZHEWJ6MCVK8WEK5V', 'cukup bagus', 'belajar yang giat', '2025-12-18 12:04:46', '2026-01-03 10:42:59');
 
 -- --------------------------------------------------------
@@ -164,7 +168,8 @@ INSERT INTO `exams` (`exam_id`, `class_id`, `exam_name`, `type`, `start_time`, `
 ('01KDWY132TBQWB6Q4EC0D17VQ3', '01KB7B61CNTD2D91YRZ6P1GVCF', 'IPA', 'UTS', '2026-01-01 21:44:00', '2026-01-01 23:04:00', 0, '2026-01-01 21:05:17'),
 ('01KE0XWYHGNRY0MJ06RFN64RFD', '01KB7B61CNTD2D91YRZ6P1GVCF', 'IPS', 'UTS', '2026-01-03 11:40:00', '2026-01-03 12:30:00', 0, '2026-01-03 10:19:59'),
 ('01KE24PSBQEJ2S56V8DT0BXX89', '01KB7B61CNTD2D91YRZ6P1GVCF', 'PPKN', 'UAS', '2026-01-03 21:38:00', '2026-01-03 22:38:00', 0, '2026-01-03 21:38:12'),
-('01KE27DRCN7DX8ZCCX7YAGK04N', '01KB7B61CNTD2D91YRZ6P1GVCF', 'Bahasa Inggris', 'UTS', '2026-01-05 10:25:00', '2026-01-05 23:25:00', 0, '2026-01-03 22:25:42');
+('01KE27DRCN7DX8ZCCX7YAGK04N', '01KB7B61CNTD2D91YRZ6P1GVCF', 'Bahasa Inggris', 'UTS', '2026-01-05 10:25:00', '2026-01-05 23:25:00', 0, '2026-01-03 22:25:42'),
+('01KFQG1XYJYBZ4NNMP2NTYCT4W', '01KB7B61CNTD2D91YRZ6P1GVCF', 'Bahasa Indonesia', 'UTS', '2026-01-24 14:56:00', '2026-01-24 15:56:00', 0, '2026-01-24 14:56:16');
 
 -- --------------------------------------------------------
 
@@ -193,7 +198,8 @@ INSERT INTO `exam_answers` (`id`, `attempt_id`, `question_id`, `answer`, `is_cor
 ('01KDX0B9BQB2W8CJ68NYH40PM8', '01KDX0B1KGKXBBWDS4HZM88H97', '01KDWY3K6XWKAT2W9BW4TVM2H0', 'A', 1),
 ('01KE12WXNZEQNDCZA8FAHF6WKQ', '01KE12WV5M90XBWSW83X4N93M7', '01KE0XYZDP22TSAK2RH5FY3ZEF', 'C', 1),
 ('01KE2708N5QFFNHZ8A4KYRFR6A', '01KE2706JJR0N9YFN84CMFVG6S', '01KE24T8SW6E4PNAN28V7X2Y5D', 'C', 1),
-('01KE2724X0EYK2WP0EPDJG4G8D', '01KE27204TAD5M7GESDJ3H7C79', '01KE24T8SW6E4PNAN28V7X2Y5D', 'C', 1);
+('01KE2724X0EYK2WP0EPDJG4G8D', '01KE27204TAD5M7GESDJ3H7C79', '01KE24T8SW6E4PNAN28V7X2Y5D', 'C', 1),
+('01KFQG7HGHHQY8V976JVSCS1VV', '01KFQG7EPDM9SHX1TDNFQX5E4R', '01KFQG6M5TDBJ96H639Y8PN1KJ', 'A', 1);
 
 -- --------------------------------------------------------
 
@@ -221,7 +227,8 @@ INSERT INTO `exam_attempts` (`id`, `exam_id`, `user_id`, `start_time`, `finished
 ('01KDX0B1KGKXBBWDS4HZM88H97', '01KDWY132TBQWB6Q4EC0D17VQ3', '01K976AHZGDA70DMQ7M9MF6SHS', '2026-01-01 21:45:41', '2026-01-01 21:45:51', '100.00', 'finished'),
 ('01KE12WV5M90XBWSW83X4N93M7', '01KE0XWYHGNRY0MJ06RFN64RFD', '01K976AHZGDA70DMQ7M9MF6SHS', '2026-01-03 11:47:19', '2026-01-03 11:47:24', '100.00', 'finished'),
 ('01KE2706JJR0N9YFN84CMFVG6S', '01KE24PSBQEJ2S56V8DT0BXX89', '01K912FR1QZHEWJ6MCVK8WEK5V', '2026-01-03 22:18:17', '2026-01-03 22:18:22', '100.00', 'finished'),
-('01KE27204TAD5M7GESDJ3H7C79', '01KE24PSBQEJ2S56V8DT0BXX89', '01K976AHZGDA70DMQ7M9MF6SHS', '2026-01-03 22:19:16', '2026-01-03 22:19:27', '100.00', 'finished');
+('01KE27204TAD5M7GESDJ3H7C79', '01KE24PSBQEJ2S56V8DT0BXX89', '01K976AHZGDA70DMQ7M9MF6SHS', '2026-01-03 22:19:16', '2026-01-03 22:19:27', '100.00', 'finished'),
+('01KFQG7EPDM9SHX1TDNFQX5E4R', '01KFQG1XYJYBZ4NNMP2NTYCT4W', '01K976AHZGDA70DMQ7M9MF6SHS', '2026-01-24 14:59:17', '2026-01-24 14:59:23', '100.00', 'finished');
 
 -- --------------------------------------------------------
 
@@ -253,7 +260,8 @@ INSERT INTO `exam_questions` (`id`, `exam_id`, `question`, `option_a`, `option_b
 ('01KDW72VRKHX32W12173SZ56X7', '01KDW4DSB2J790GGWCV772C5DC', '2+2', '1', '2', '3', '4', 'D', '2026-01-01 14:24:18'),
 ('01KDWY3K6XWKAT2W9BW4TVM2H0', '01KDWY132TBQWB6Q4EC0D17VQ3', 'jika air berubah menjadi padat maka itu dinamakan', 'beku', 'cair', 'lebur', 'uap', 'A', '2026-01-01 21:06:39'),
 ('01KE0XYZDP22TSAK2RH5FY3ZEF', '01KE0XWYHGNRY0MJ06RFN64RFD', 'negara dibagian selatan di indonesia?', 'malaysia', 'singapura', 'timor leste', 'papua nugini', 'C', '2026-01-03 10:21:06'),
-('01KE24T8SW6E4PNAN28V7X2Y5D', '01KE24PSBQEJ2S56V8DT0BXX89', 'kapan hari pahlawan', '10 oktober', '11 November', '10 november', '11 oktober', 'C', '2026-01-03 21:40:06');
+('01KE24T8SW6E4PNAN28V7X2Y5D', '01KE24PSBQEJ2S56V8DT0BXX89', 'kapan hari pahlawan', '10 oktober', '11 November', '10 november', '11 oktober', 'C', '2026-01-03 21:40:06'),
+('01KFQG6M5TDBJ96H639Y8PN1KJ', '01KFQG1XYJYBZ4NNMP2NTYCT4W', 'Kata baku \"Fotocopy\" adalah', 'Fotokopi', 'photokopi', 'fotocopi', 'photocopi', 'A', '2026-01-24 14:58:50');
 
 -- --------------------------------------------------------
 
@@ -266,6 +274,7 @@ CREATE TABLE `observation` (
   `class_id` char(26) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `subjects` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `instruction` varchar(64) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -273,8 +282,8 @@ CREATE TABLE `observation` (
 -- Dumping data for table `observation`
 --
 
-INSERT INTO `observation` (`observation_id`, `class_id`, `title`, `subjects`, `created_at`) VALUES
-('01KDZGX579QG6GMGJZDKP75SBE', '01KB7B61CNTD2D91YRZ6P1GVCF', 'tugas', 'PPKN', '2026-01-02 21:13:40');
+INSERT INTO `observation` (`observation_id`, `class_id`, `title`, `subjects`, `instruction`, `created_at`) VALUES
+('01KFZZ3WH532Z7KPJ9DFQM59M4', '01KB7B61CNTD2D91YRZ6P1GVCF', 'tugas observasi', 'PPKN', 'observasikan lapangan', '2026-01-27 21:53:24');
 
 -- --------------------------------------------------------
 
@@ -290,6 +299,13 @@ CREATE TABLE `observation_results` (
   `feedback` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `observation_results`
+--
+
+INSERT INTO `observation_results` (`id`, `observation_id`, `user_id`, `score`, `feedback`, `created_at`) VALUES
+('01KG006Z0J3CJFDHWNCM4NA46H', '01KFZZ3WH532Z7KPJ9DFQM59M4', '01K976AHZGDA70DMQ7M9MF6SHS', 90, 'ok baik', '2026-01-27 22:12:34');
 
 -- --------------------------------------------------------
 
@@ -312,7 +328,7 @@ CREATE TABLE `observation_uploads` (
 --
 
 INSERT INTO `observation_uploads` (`id`, `observation_id`, `user_id`, `file_name`, `original_name`, `description`, `created_at`) VALUES
-('01KE4TMP6AQ1JV6ZANJBA2FFN8', '01KDZGX579QG6GMGJZDKP75SBE', '01K976AHZGDA70DMQ7M9MF6SHS', 'b8c5264d804602cb98adf13530b4efe2.pdf', '01KCQAGCBTYDP74G0M61TW7GK4.pdf', 'tugas', '2026-01-04 22:40:01');
+('01KG005P75MWVTPK8RYFJEYCY7', '01KFZZ3WH532Z7KPJ9DFQM59M4', '01K976AHZGDA70DMQ7M9MF6SHS', 'd3309105692a33c9246e9454ae623ae0.docx', '58cf46a8330f6bb2deb2a844887a6a02.docx', 'Tugas', '2026-01-27 22:11:52');
 
 -- --------------------------------------------------------
 
@@ -357,8 +373,8 @@ CREATE TABLE `quizzes` (
 
 INSERT INTO `quizzes` (`quiz_id`, `class_id`, `title`, `subjects`, `created_at`) VALUES
 ('01KBH0DPH9HD8DEV3N7T3XQQN1', '01KB6S6G7FHD6ZYZP8BKNNYBFF', 'test', 'test', '2025-12-03 09:24:51'),
-('01KDZF5SN3HSF8170290Z49QRN', '01KB7B61CNTD2D91YRZ6P1GVCF', 'kuis', 'Matematika', '2026-01-02 20:43:26'),
-('01KDZHZ8EGS9M17SCAXHCA2H3W', '01KB7B61CNTD2D91YRZ6P1GVCF', 'kuis 2', 'IPA', '2026-01-02 21:32:18');
+('01KDZF5SN3HSF8170290Z49QRN', '01KB7B61CNTD2D91YRZ6P1GVCF', 'kuis', 'PPKN', '2026-01-02 20:43:26'),
+('01KDZHZ8EGS9M17SCAXHCA2H3W', '01KB7B61CNTD2D91YRZ6P1GVCF', 'kuis 2', 'Bahasa Indonesia', '2026-01-02 21:32:18');
 
 -- --------------------------------------------------------
 
@@ -394,7 +410,11 @@ INSERT INTO `quiz_answers` (`id`, `result_id`, `question_id`, `selected_option`,
 ('01KDZJ0K1XCW206Z02R0XD44TQ', '01KDZJ0K1XG6TSF7F71E0XADWX', '01KDZHYY0HAHPF2ET1MVD6S4C8', 'A', 1, '2026-01-02 21:33:01'),
 ('01KE270XZQBPVMNW6BQK3VWGYB', '01KE270XZQ095XVM5Z7KRJQ3XG', '01KDZHZKFGHZMWXN6KHDYBFNP3', 'A', 1, '2026-01-03 22:18:42'),
 ('01KECA4RBAEAP2YBQ0SF5917DD', '01KECA4RB91T9Q693PAJD23HHF', '01KDZHZKFGHZMWXN6KHDYBFNP3', 'C', 0, '2026-01-07 20:25:37'),
-('01KECA9S1R0ZCYEHXR5ZQES4CC', '01KECA9S1REQFN6GRC8X7SPDRH', '01KDZHZKFGHZMWXN6KHDYBFNP3', 'A', 1, '2026-01-07 20:28:21');
+('01KECA9S1R0ZCYEHXR5ZQES4CC', '01KECA9S1REQFN6GRC8X7SPDRH', '01KDZHZKFGHZMWXN6KHDYBFNP3', 'A', 1, '2026-01-07 20:28:21'),
+('01KGA5RX4G0G345SAEZK656Y3R', '01KGA5RX4G1RWZFWBP14C6392F', '01KGA5MG9SHQH8CJXQ88J4MEAB', 'A', 1, '2026-01-31 21:02:09'),
+('01KGA5RX4G61ST70VPNKGRJGHB', '01KGA5RX4G1RWZFWBP14C6392F', '01KGA5MG9R9WCZXM8H9Y0NN0G7', 'D', 1, '2026-01-31 21:02:09'),
+('01KGA5TAHD85XW8EJKE2RC0GE7', '01KGA5TAHDQ6D6HB78FKPSQZ5Q', '01KGA5MG9R9WCZXM8H9Y0NN0G7', 'A', 0, '2026-01-31 21:02:56'),
+('01KGA5TAHDG6B6QCNZT4P2PXHB', '01KGA5TAHDQ6D6HB78FKPSQZ5Q', '01KGA5MG9SHQH8CJXQ88J4MEAB', 'B', 0, '2026-01-31 21:02:56');
 
 -- --------------------------------------------------------
 
@@ -422,7 +442,8 @@ INSERT INTO `quiz_questions` (`question_id`, `quiz_id`, `question_text`, `option
 ('01KBKK9A955KEQB14ZXVB7M0XP', '01KBH0DPH9HD8DEV3N7T3XQQN1', '1+1=', '1', '0', '2', '3', 'C', '2025-12-04 09:32:59'),
 ('01KBKK9A956DA39N3BTY2JTAGW', '01KBH0DPH9HD8DEV3N7T3XQQN1', 'siapa', 'Saya', 'Aku', 'Dia', 'Kamu', 'C', '2025-12-04 09:32:59'),
 ('01KDZHYY0HAHPF2ET1MVD6S4C8', '01KDZF5SN3HSF8170290Z49QRN', 'siapa', 'a', 'b', 'c', 'd', 'A', '2026-01-02 21:32:07'),
-('01KDZHZKFGHZMWXN6KHDYBFNP3', '01KDZHZ8EGS9M17SCAXHCA2H3W', 'apa', 'a', 'b', 'c', 'd', 'A', '2026-01-02 21:32:29');
+('01KFTNAYHMW1KY5H1T9XRP1FWS', '01KDZHZ8EGS9M17SCAXHCA2H3W', 'di mana rumah niko', 'budi', 'ayu', 'jalan mangga', '5', 'C', '2026-01-25 20:26:18'),
+('01KFTNAYHMZEMVCXJNV7GZT85D', '01KDZHZ8EGS9M17SCAXHCA2H3W', 'kapan masuk sekolah', 'jam 8', 'jam 9', 'jam 10', 'jam 7 ', 'D', '2026-01-25 20:26:18');
 
 -- --------------------------------------------------------
 
@@ -448,9 +469,7 @@ INSERT INTO `quiz_results` (`result_id`, `quiz_id`, `user_id`, `score`, `total_c
 ('01KCKSE1CFYS36003XHZXJ181J', '01KBH0DPH9HD8DEV3N7T3XQQN1', '01K912FR1QZHEWJ6MCVK8WEK5V', 100, 2, 2, '2025-12-16 21:36:07'),
 ('01KCQX4650QV4KQMJ64454MN87', '01KCQVZ4JNK7097M1RHWYVMWK2', '01K976AHZGDA70DMQ7M9MF6SHS', 100, 1, 1, '2025-12-18 11:57:36'),
 ('01KCQX7MS1KYPDQGV2DH4DXVMD', '01KCQVZ4JNK7097M1RHWYVMWK2', '01K912FR1QZHEWJ6MCVK8WEK5V', 100, 1, 1, '2025-12-18 11:59:29'),
-('01KDZJ0K1XG6TSF7F71E0XADWX', '01KDZF5SN3HSF8170290Z49QRN', '01K976AHZGDA70DMQ7M9MF6SHS', 100, 1, 1, '2026-01-02 21:33:01'),
-('01KE270XZQ095XVM5Z7KRJQ3XG', '01KDZHZ8EGS9M17SCAXHCA2H3W', '01K912FR1QZHEWJ6MCVK8WEK5V', 100, 1, 1, '2026-01-03 22:18:41'),
-('01KECA9S1REQFN6GRC8X7SPDRH', '01KDZHZ8EGS9M17SCAXHCA2H3W', '01K976AHZGDA70DMQ7M9MF6SHS', 100, 1, 1, '2026-01-07 20:28:21');
+('01KDZJ0K1XG6TSF7F71E0XADWX', '01KDZF5SN3HSF8170290Z49QRN', '01K976AHZGDA70DMQ7M9MF6SHS', 100, 1, 1, '2026-01-02 21:33:01');
 
 -- --------------------------------------------------------
 
@@ -513,7 +532,8 @@ CREATE TABLE `teachers` (
 
 INSERT INTO `teachers` (`id`, `user_id`, `created_at`) VALUES
 ('01KB4C6WZDNXRWB3SMFXSZ9NT1', '01KB4C6WR9SGY6RMQK5HAVA1AB', '2025-11-28 11:40:43'),
-('01KB7B41WP5AAA8MZ0TVADNRF8', '01KB7B41P3TQC2JSDWFMEZTSE8', '2025-11-29 15:19:25');
+('01KB7B41WP5AAA8MZ0TVADNRF8', '01KB7B41P3TQC2JSDWFMEZTSE8', '2025-11-29 15:19:25'),
+('01KGA7QPWTVHEX359B4VF4G6R5', '01KGA7QPNCCD4957KDH7E5CG4Z', '2026-01-31 21:36:27');
 
 -- --------------------------------------------------------
 
@@ -529,7 +549,7 @@ CREATE TABLE `users` (
   `name` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(150) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'foto.jpg',
-  `is_active` tinyint(1) DEFAULT '1',
+  `is_active` tinyint(1) DEFAULT '0',
   `created_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -545,7 +565,10 @@ INSERT INTO `users` (`id`, `username`, `password`, `role_id`, `name`, `email`, `
 ('01K976AHZGDA70DMQ7M9MF6SHS', 'mujaki', '$2y$10$QpYl4IuqPUX1JXXgnhoN4OBg.nPy5Ra/9rPmEvtURp7UtkRcXqh/G', '01K8WA74MMB7VBRM1Y05NS7GNQ', 'Mujaki', 'Mujaki6@email.id', 'profile_01K976AHZGDA70DMQ7M9MF6SHS_1767794387.jpg', 1, '2025-11-04 17:24:11'),
 ('01KB4C6WR9SGY6RMQK5HAVA1AB', 'siti_jainabun', '$2y$10$fHr8e70PrRoJ98su4XNBFebJ6xhM02gUCroXw5wc8gv9Fstng.nrG', '01K8WA6WVXEKX7JK822G9PVZG9', 'Ibu SITI JAINABUN', 'siti_jainabun@email.id', 'foto.jpg', 1, '2025-11-28 11:40:43'),
 ('01KB7B41P3TQC2JSDWFMEZTSE8', 'juhaeiriah', '$2y$10$HgUDzfFbppAUNhtwBEe7Zu0JQJ/KNSUueEzQpHafnPAJltjpj/Zy.', '01K8WA6WVXEKX7JK822G9PVZG9', 'Ibu Juhaeiriah', 'juhaeiriah@email.id', 'profile_01KB7B41P3TQC2JSDWFMEZTSE8_1767794036.jpg', 1, '2025-11-29 15:19:25'),
-('01KE4PBT988930VZK18WE2XFEA', 'murid2', '$2y$10$iF/Yuh4Z0hcpPAC8N2L08O/1lndMfpNqar./rb7jVHc30dG49VLmO', '01K8WA74MMB7VBRM1Y05NS7GNQ', 'murid2', 'murid@mu.rid2', 'foto.jpg', 1, '2026-01-04 21:25:16');
+('01KE4PBT988930VZK18WE2XFEA', 'murid2', '$2y$10$iF/Yuh4Z0hcpPAC8N2L08O/1lndMfpNqar./rb7jVHc30dG49VLmO', '01K8WA74MMB7VBRM1Y05NS7GNQ', 'murid2', 'murid@mu.rid2', 'foto.jpg', 1, '2026-01-04 21:25:16'),
+('01KG1DMJH8KHJXP0X8B1X5VW5H', 'murid3', '$2y$10$84lJGR92MdWCDiAE/GOaQ.sejxwOsqTDupYyjHEC8NRE3yHMTWN/m', '01K8WA74MMB7VBRM1Y05NS7GNQ', 'murid3', 'murid@mu.rid3', 'foto.jpg', 0, '2026-01-28 11:26:26'),
+('01KGA7QPNCCD4957KDH7E5CG4Z', 'guru_pkn', '$2y$10$H7LfBU2LAtHv5Wp1emseBObT4eZfRIecsR9GuHFXehA8nDEB4t43C', '01K8WA6WVXEKX7JK822G9PVZG9', 'guru pkn', 'guru@guru3.id', 'foto.jpg', 1, '2026-01-31 21:36:27'),
+('01KGAAHRBVJH4S7Y69W46JCTZP', 'hermanp', '$2y$10$m1zZFkT9fZXwSx4k0YZUMeSPFuCeL9vgM8yADLUDxzuRjKPBCWsR6', '01K8WA74MMB7VBRM1Y05NS7GNQ', 'murid4', 'murid@mu.rid4', 'default.jpg', 1, '2026-01-31 22:25:38');
 
 -- --------------------------------------------------------
 
@@ -629,7 +652,8 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `is_active
 (15, 3, 'Laporan', 'siswa/laporan', 'bi-bar-chart', 1),
 (16, 2, 'Kelas', 'guru/dashboard/kelas', 'bi-easel', 1),
 (17, 3, 'Kelas', 'siswa/dashboard/kelas', 'bi-easel', 1),
-(18, 7, 'Profil', 'profile', 'bi-person-check', 1);
+(18, 7, 'Profil', 'profile', 'bi-person-check', 1),
+(19, 1, 'Kelola Aktivasi Siswa', 'admin/dashboard/activation', 'bi-person-check-fill', 1);
 
 --
 -- Indexes for dumped tables
@@ -830,7 +854,7 @@ ALTER TABLE `user_menu`
 -- AUTO_INCREMENT for table `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Constraints for dumped tables

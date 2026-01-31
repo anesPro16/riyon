@@ -25,7 +25,8 @@
     /* BACKGROUND */
     .login-page {
         min-height: 100vh;
-        background: url('<?= base_url('assets/img/login-bg.jpg') ?>') center/cover no-repeat;
+        /*background: url('</?= base_url('assets/img/login-bg.jpg') ?>') center/cover no-repeat;*/
+        background: url('<?= base_url('assets/img/cover.jpg') ?>') center/cover no-repeat;
         position: relative;
         display: flex;
         align-items: center;

@@ -10,17 +10,6 @@ class Dashboard extends CI_Controller {
     $this->load->model('Dashboard_model', 'dashboard');
 	}
 
-	/*public function index()
-	{
-		$data['user'] = $this->session->userdata();
-		$data['title'] = 'Dashboard Admin';
-
-		$this->load->view('templates/header', $data);
-		$this->load->view('templates/sidebar');
-		$this->load->view('dashboard/admin', $data);
-		$this->load->view('templates/footer');
-	}*/
-
   public function index()
   {
     $data['title'] = 'Dashboard Admin';
@@ -515,6 +504,51 @@ class Dashboard extends CI_Controller {
         $this->output
         ->set_content_type('application/json')
         ->set_output(json_encode($data));
+    }
+
+    // Halaman View Utama
+    public function activation()
+    {
+        $data['title'] = 'Kelola Aktivasi Siswa';
+        // Data user yang sedang login (Admin)
+        $data['user'] = $this->db->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar', $data);
+        $this->load->view('admin/siswa_activation', $data); // Load View Baru
+        $this->load->view('templates/footer');
+    }
+
+    // API: Ambil Data JSON
+    public function get_siswa_json()
+    {
+        $siswa = $this->User_model->getSiswaUsers();
+        
+        header('Content-Type: application/json');
+        echo json_encode($siswa);
+    }
+
+    // API: Simpan Perubahan (Aktivasi)
+    public function update_activation()
+    {
+        // CSRF Token hash terbaru wajib dikirim balik
+        $csrf_hash = $this->security->get_csrf_hash();
+
+        $id = $this->input->post('id');
+        $is_active = $this->input->post('is_active') ? 1 : 0;
+
+        if (!$id) {
+            echo json_encode(['status' => 'error', 'message' => 'ID User tidak ditemukan.', 'csrf_hash' => $csrf_hash]);
+            return;
+        }
+
+        $update = $this->User_model->updateStatus($id, $is_active);
+
+        if ($update) {
+            echo json_encode(['status' => 'success', 'message' => 'Status aktivasi berhasil diperbarui.', 'csrf_hash' => $csrf_hash]);
+        } else {
+            echo json_encode(['status' => 'error', 'message' => 'Gagal memperbarui data.', 'csrf_hash' => $csrf_hash]);
+        }
     }
 
 }

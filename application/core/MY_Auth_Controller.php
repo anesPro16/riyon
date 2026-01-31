@@ -1,7 +1,3 @@
-<!-- File: application/core/MY_Auth_Controller.php -->
-
-<!-- Pastikan file MY_Auth_Controller.php disimpan di folder application/core/. Jika CI3 Anda belum memuatnya otomatis, pastikan config subclass_prefix di config.php diatur ke MY_ (defaultnya sudah begitu). -->
-
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
@@ -15,19 +11,12 @@ class MY_Auth_Controller extends CI_Controller
     protected $base_redirect = '';  // Redirect url (misal: 'auth' atau 'guru/auth')
     protected $allowed_role_login = []; // Role yang boleh login di halaman ini
 
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->model('Auth_model');
-        $this->load->library('form_validation');
-    }
-
     // Logika Redirect Dashboard Terpusat
     protected function _redirect_dashboard()
     {
         $role = $this->session->userdata('role');
         switch ($role) {
-            case 'Admin': redirect('admin/dashboard/classes'); break;
+            case 'Admin': redirect('admin/dashboard'); break;
             case 'Guru':  redirect('guru/dashboard'); break;
             case 'Siswa': redirect('siswa/dashboard'); break;
             default: redirect('auth/blocked'); break;
@@ -129,7 +118,7 @@ class MY_Auth_Controller extends CI_Controller
             }
 
             if ($this->Auth_model->register_user($data)) {
-                $this->session->set_flashdata('success', 'Pendaftaran berhasil, silakan login.');
+                $this->session->set_flashdata('success', 'Pendaftaran berhasil, tunggu aktivasi akun, sebelum login!');
                 redirect($this->base_redirect);
             } else {
                 $this->session->set_flashdata('error', 'Terjadi kesalahan sistem.');

@@ -109,6 +109,7 @@
         </div>
 
         <div class="modal-body">
+          <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
           <input type="hidden" name="quiz_id" id="quizId">
           <input type="hidden" name="class_id" id="quizClassId" value="<?= $class_id; ?>">
 

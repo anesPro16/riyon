@@ -29,7 +29,7 @@ class Dashboard_model extends CI_Model
 
   public function count_pbl_quizzes()
   {
-    return $this->db->count_all('pbl_quizzes');
+    return $this->db->count_all('quizzes');
   }
 
   public function count_exams()
@@ -103,19 +103,19 @@ class Dashboard_model extends CI_Model
       /* Quiz */
       $quiz = $this->db
           ->select_avg('score')
-          ->get('pbl_quiz_results')
+          ->get('quiz_results')
           ->row()->score ?? 0;
 
       /* Observasi */
       $observasi = $this->db
           ->select_avg('score')
-          ->get('pbl_observation_results')
+          ->get('observation_results')
           ->row()->score ?? 0;
 
       /* Essay */
       $essay = $this->db
           ->select_avg('grade')
-          ->get('pbl_essay_submissions')
+          ->get('essay_submissions')
           ->row()->grade ?? 0;
 
       /* Ujian (UTS + UAS) */

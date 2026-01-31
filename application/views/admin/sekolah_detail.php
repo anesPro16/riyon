@@ -6,7 +6,7 @@
             <button class="btn btn-primary mb-3" id="btnAddClass">
                 <i class="fas fa-plus"></i> Tambah Kelas Baru
             </button>
-
+            <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
                     <h6 class="m-0 font-weight-bold text-primary">Daftar Kelas (Semua)</h6>

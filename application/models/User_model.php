@@ -8,7 +8,30 @@ class User_model extends CI_Model
 
     public function get($id)
     {
-        return $this->db->get_where($this->table, ['id' => $id])->row();
+        // return $this->db->get_where($this->table, ['id' => $id])->row();
+        return $this->db
+            ->select('id, username, role_id, name, email, image, is_active')
+            ->from($this->table)
+            ->where('id', $id)
+            ->get()->row();
+    }
+
+    // Ambil data user khusus role 'Siswa'
+    public function getSiswaUsers()
+    {
+        $this->db->select('users.id as user_id, users.name, users.role_id, users.is_active, roles.role');
+        $this->db->from('users');
+        $this->db->join('roles', 'roles.id = users.role_id');
+        $this->db->where('roles.role', 'Siswa'); // Filter hanya Siswa
+        $this->db->order_by('users.created_at', 'DESC');
+        return $this->db->get()->result_array();
+    }
+
+    // Update status aktif
+    public function updateStatus($id, $is_active)
+    {
+        $this->db->where('id', $id);
+        return $this->db->update('users', ['is_active' => $is_active]);
     }
 
     public function get_by_username($username)

@@ -98,6 +98,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
+          <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
           <input type="hidden" name="user_id" id="modalUserId">
           <input type="hidden" name="class_id" value="<?= $class_id; ?>">
           <div class="mb-3">

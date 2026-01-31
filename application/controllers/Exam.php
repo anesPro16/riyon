@@ -548,6 +548,10 @@ public function delete_question()
     // Ambil daftar sekolah dari model
 		$kelas = $this->Murid_model->get_kelas_by_murid($user_id);
 
+        if ($kelas == null) {
+          redirect('siswa/dashboard');
+        }
+
 		$class_id = $kelas->id;
 	    if (!$class_id) show_404();
 	    

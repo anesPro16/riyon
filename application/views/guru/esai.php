@@ -79,6 +79,7 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
+          <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
           <input type="hidden" name="id" id="esaiId">
           <input type="hidden" name="class_id" value="<?= $class_id; ?>">
           
