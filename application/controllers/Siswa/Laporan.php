@@ -51,7 +51,7 @@ class Laporan extends CI_Controller {
   {
     $user_id = $this->session->userdata('user_id');    
     // Ambil data nilai
-    $data = $this->Refleksi_model->get_student_score_data($user_id, $class_id);
+    $data = $this->Laporan_model->get_student_score_data($user_id, $class_id);
     
     // Return JSON
     echo json_encode($data);

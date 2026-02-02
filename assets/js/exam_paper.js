@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     const CSRF_NAME = window.CSRF_TOKEN_NAME;
-    let csrfHash = document.querySelector(`input[name="${CSRF_NAME}"]`).value;
+    // let csrfHash = document.querySelector('input[name="' + window.CSRF_TOKEN_NAME + '"]');
+
+    const csrfTokenEl = document.querySelector('input[name="' + window.CSRF_TOKEN_NAME + '"]');
+
+    let currentCsrfToken = document.querySelector(`input[name="${CSRF_NAME}"]`).value;
+    
     const ATTEMPT_ID = document.querySelector('input[name="attempt_id"]').value;
     const TOTAL_Q = window.TOTAL_QUESTIONS;
     
@@ -92,42 +97,59 @@ document.addEventListener('DOMContentLoaded', () => {
     renderNavigation();
 
     // --- 4. AUTO SAVE JAWABAN ---
+    const saveAnswer = async (questionId, answer) => {
+        const formData = new FormData();
+        formData.append('attempt_id', ATTEMPT_ID);
+        formData.append('question_id', questionId);
+        formData.append('answer', answer);
+        // Selalu gunakan token terbaru dari variabel global
+        formData.append(CSRF_NAME, currentCsrfToken);
+
+        try {
+            const response = await fetch(`${window.BASE_URL}exam/save_answer`, {
+                method: 'POST',
+                body: formData
+            });
+
+            if (!response.ok) throw new Error('Network response error');
+
+            const data = await response.json();
+
+            // KUNCI UTAMA: Update token global dengan token baru dari server
+            if (data.csrf_hash) {
+                currentCsrfToken = data.csrf_hash;
+                // Update juga hidden input di DOM agar sinkron jika ada form submit lain
+                document.querySelectorAll(`input[name="${CSRF_NAME}"]`).forEach(el => {
+                    el.value = data.csrf_hash;
+                });
+            }
+
+        } catch (error) {
+            console.error('Gagal menyimpan', error);
+            // Opsional: Tampilkan notifikasi gagal simpan
+        }
+    };
+
     document.querySelectorAll('.answer-radio').forEach(radio => {
-        radio.addEventListener('change', async (e) => {
+        radio.addEventListener('change', (e) => {
             const questionId = e.target.closest('.question-container').dataset.qid;
             const answer = e.target.value;
 
             // Update UI navigasi (langsung hijau)
             renderNavigation();
 
-            // Kirim ke server
-            const formData = new FormData();
-            formData.append('attempt_id', ATTEMPT_ID);
-            formData.append('question_id', questionId);
-            formData.append('answer', answer);
-            formData.append(CSRF_NAME, csrfHash);
-
-            try {
-                // Gunakan fetch tanpa await blocking agar user tidak lag
-                fetch(`${window.BASE_URL}exam/save_answer`, {
-                    method: 'POST',
-                    body: formData
-                });
-                // Kita tidak update CSRF hash di sini karena fetch concurrent bisa bikin mismatch.
-                // CodeIgniter 3 default CSRF regenerate mungkin perlu diset FALSE di config 
-                // atau gunakan teknik khusus. Untuk PBL sekolah sederhana, abaikan regenerate per request.
-            } catch (error) {
-                console.error('Gagal menyimpan', error);
-            }
+            // Panggil fungsi save
+            saveAnswer(questionId, answer);
         });
     });
 
-    // --- 5. FINISH EXAM ---
+    // ... (Kode Finish Exam biarkan tetap sama, pastikan menggunakan currentCsrfToken) ...
     const finishExam = (force = false) => {
         const submitLogic = () => {
             const formData = new FormData();
             formData.append('attempt_id', ATTEMPT_ID);
-            formData.append(CSRF_NAME, csrfHash);
+            // Gunakan token terbaru
+            formData.append(CSRF_NAME, currentCsrfToken); 
 
             fetch(`${window.BASE_URL}exam/finish_exam`, {
                 method: 'POST',
@@ -140,7 +162,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         };
-
         if (force) {
             Swal.fire({
                 title: 'Waktu Habis!',

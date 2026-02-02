@@ -208,6 +208,13 @@
                                         Daftar sekarang
                                     </a>
                                 </small>
+
+                                <small class="text-muted d-block">
+                                    Masuk Sebagai Staf?
+                                    <a href="<?= site_url('staf'); ?>" class="fw-bold text-decoration-none">
+                                         Staf
+                                    </a>
+                                </small>
                                 <!-- COPYRIGHT -->
                                 <div class="text-center mt-3">
                                     <small class="mt-2 text-center text-muted">

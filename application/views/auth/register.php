@@ -210,6 +210,18 @@
 								</div>
 							<?php endif; ?>
 
+							<?php if (isset($is_quota_full) && $is_quota_full): ?>
+							    <div class="alert alert-warning border-0 shadow-sm">
+							        <i class="bi bi-exclamation-circle-fill me-2"></i>
+							        <strong>Pendaftaran Tutup!</strong> Kuota harian (<?= $limit  ?> siswa) telah terpenuhi. Silakan kembali besok.
+							    </div>
+							<?php elseif(isset($remaining_quota)): ?>
+							     <div class="alert alert-info border-0 shadow-sm py-2 small">
+							        <i class="bi bi-info-circle me-1"></i>
+							        Sisa kuota hari ini: <strong><?= $remaining_quota ?></strong> siswa.
+							    </div>
+							<?php endif; ?>
+
 							<!-- <form action="</?= site_url('auth/register_action'); ?>" method="POST"> -->
 							<?= form_open('auth/register_action'); ?>
 
@@ -267,8 +279,13 @@
 									</label>
 								</div>
 
-								<button type="submit" id="registerBtn" class="btn btn-register w-100 text-white" disabled>
+								<!-- <button type="submit" id="registerBtn" class="btn btn-register w-100 text-white" disabled>
 									<i class="bi bi-person-plus-fill me-2"></i> Buat Akun Sekarang
+								</button> -->
+
+								<button type="submit" id="registerBtn" class="btn btn-register w-100 text-white" 
+								    <?= (isset($is_quota_full) && $is_quota_full) ? 'disabled' : 'disabled' ?> >
+								    <i class="bi bi-person-plus-fill me-2"></i> Buat Akun Sekarang
 								</button>
 
 								<div class="text-center mt-4">
@@ -332,9 +349,19 @@
     });
 
     // Enable Button only if Term checked
-    termsCheck.addEventListener('change', function() {
+    /*termsCheck.addEventListener('change', function() {
     	registerBtn.disabled = !this.checked;
-    });
+    });*/
+    // Update script JS di register.php
+		const isQuotaFull = <?= (isset($is_quota_full) && $is_quota_full) ? 'true' : 'false' ?>;
+
+		termsCheck.addEventListener('change', function() {
+		    // Hanya enable jika dicentang DAN kuota TIDAK penuh
+		    if (!isQuotaFull) {
+		        registerBtn.disabled = !this.checked;
+		    }
+		});
+
   </script>
 
 </body>

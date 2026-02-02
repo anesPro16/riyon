@@ -782,7 +782,7 @@ public function save_answer()
             'answer' => $answer
         ]);
     }
-    echo json_encode(['status' => 'success']);
+    echo json_encode(['status' => 'success', 'csrf_hash' => $this->security->get_csrf_hash()]);
 }
 
 	// 4. Selesai Ujian (Hitung Nilai)

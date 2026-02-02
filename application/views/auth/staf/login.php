@@ -249,7 +249,14 @@
 
 							<?= form_close(); ?>
 
-							<div class="text-center mt-4">
+							<small class="text-muted text-center d-block my-3">
+                  Masuk Sebagai Murid?
+                  <a href="<?= site_url('auth'); ?>" class="fw-bold text-decoration-none">
+                       Murid
+                  </a>
+              </small>
+
+							<div class="text-center">
 								<small class="text-muted">
 									&copy; <?= date('Y'); ?> <strong>SDN Pantai Hurip 02</strong>. <br>All Rights Reserved.
 								</small>

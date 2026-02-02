@@ -117,7 +117,7 @@ class Laporan_model extends CI_Model {
         (
             SELECT GROUP_CONCAT(CONCAT(pq.subjects, '::', pqr.score) SEPARATOR '||')
             FROM quiz_results pqr
-            JOIN quizzes pq ON pq.id = pqr.quiz_id
+            JOIN quizzes pq ON pq.quiz_id = pqr.quiz_id
             WHERE pqr.user_id = u.id 
             AND pq.class_id = '$class_id'
         ) as quiz_data,

@@ -3,6 +3,9 @@ import CrudHandler from './crud_handler.js';
 document.addEventListener('DOMContentLoaded', () => {
     const CURRENT_CLASS_ID = window.CURRENT_CLASS_ID;
 
+    // Ambil token CSRF
+    const csrfTokenEl = document.querySelector('input[name="' + window.CSRF_TOKEN_NAME + '"]');
+
     // Helper: Format Tanggal
     const formatTime = (dateString) => {
         if(!dateString) return '-';
@@ -17,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         readOnly: true, // Tidak ada fitur tambah/hapus di tabel siswa
         csrf: { 
             tokenName: window.CSRF_TOKEN_NAME, 
-            tokenHash: document.querySelector(`input[name="${window.CSRF_TOKEN_NAME}"]`)?.value || '' 
+            tokenHash: csrfTokenEl ? csrfTokenEl.value : ''
+            // tokenHash: document.querySelector(`input[name="${window.CSRF_TOKEN_NAME}"]`)?.value || '' 
         },
         urls: {
             load: `exam/get_student_exams/${CURRENT_CLASS_ID}`,

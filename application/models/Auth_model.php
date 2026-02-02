@@ -18,6 +18,18 @@ class Auth_model extends CI_Model
       return $this->db->insert('users', $data);
   }
 
+  // Tambahkan function ini di dalam class Auth_model
+  public function count_registrations_today()
+  {
+      // Mengambil tanggal hari ini (Y-m-d)
+      $today = date('Y-m-d');
+      
+      // Query: SELECT COUNT(*) FROM users WHERE DATE(created_at) = '202X-XX-XX'
+      $this->db->where('DATE(created_at)', $today);
+      $this->db->from('users');
+      return $this->db->count_all_results();
+  }
+
   public function is_unique_username($username)
   {
       return $this->db->get_where('users', ['username' => $username])->num_rows() === 0;
