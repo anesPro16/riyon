@@ -23,7 +23,7 @@ class Pbl_observasi extends CI_Controller
     $user_id = $this->session->userdata('user_id');
     $result = $this->Pbl_observasi_model->get_student_result($slot_id, $user_id);
 
-    $data['title'] = 'Upload Observasi: ' . $slot->title;
+    $data['title'] = 'Halaman Detail Observasi';
     $data['slot'] = $slot;
     $data['result'] = $result;
     $data['class_id'] = $slot->class_id;

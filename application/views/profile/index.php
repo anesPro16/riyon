@@ -31,10 +31,10 @@
 
 					<ul class="nav nav-tabs nav-tabs-bordered">
 						<li class="nav-item">
-							<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview">Overview</button>
+							<button class="nav-link active" data-bs-toggle="tab" data-bs-target="#overview">Data Akun</button>
 						</li>
 						<li class="nav-item">
-							<button class="nav-link" data-bs-toggle="tab" data-bs-target="#edit">Edit Profile</button>
+							<button class="nav-link" data-bs-toggle="tab" data-bs-target="#edit">Ubah Profil</button>
 						</li>
 					</ul>
 
@@ -101,7 +101,7 @@
 								</div>
 
 								<div class="text-center">
-									<button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+									<button type="submit" class="btn btn-primary">Simpan</button>
 								</div>
 							</form>
 						</div>

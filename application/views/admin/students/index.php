@@ -4,12 +4,12 @@
         <div class="col-lg-12">
 
             <button class="btn btn-primary mb-3" id="btnAddStudent">
-                <i class="fas fa-user-plus"></i> Tambah Siswa Baru
+                <i class="fas fa-user-plus"></i> Tambah Murid
             </button>
 
             <div class="card shadow mb-4">
                 <div class="card-header py-3">
-                    <h6 class="m-0 font-weight-bold text-primary">Daftar Siswa</h6>
+                    <h6 class="m-0 font-weight-bold text-primary">Daftar Murid</h6>
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -38,7 +38,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="studentModalLabel">Form Siswa</h5>
+                <h5 class="modal-title" id="studentModalLabel">Form Murid</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             
@@ -63,7 +63,7 @@
                     <div class="mb-3" id="usernameGroup">
                         <label for="studentUsername" class="form-label">Username</label>
                         <input type="text" class="form-control" id="studentUsername" name="username">
-                        <div class="form-text">Hanya bisa diisi saat menambah siswa baru.</div>
+                        <div class="form-text">Hanya bisa diisi saat menambah murid baru.</div>
                     </div>
                     
                     <div class="mb-3" id="passwordGroup">

@@ -53,12 +53,12 @@
 
     <div class="row g-3 mb-2">
 
-        <!-- TOTAL SISWA -->
+        <!-- TOTAL Murid -->
         <div class="col-xl-4 col-md-6">
             <div class="card stat-card">
                 <div class="card-body d-flex align-items-center justify-content-between">
                     <div>
-                        <small class="text-muted">Total Siswa Ajar</small>
+                        <small class="text-muted">Total Murid Ajar</small>
                         <h4 class="fw-bold mb-0" id="card-students">
                             <div class="spinner-border spinner-border-sm text-primary"></div>
                         </h4>
@@ -174,7 +174,7 @@
                         <table class="table table-striped table-hover mb-0" id="priorityTable">
                             <thead class="bg-light">
                                 <tr>
-                                    <th>Nama Siswa</th>
+                                    <th>Nama Murid</th>
                                     <th>Judul Tugas</th>
                                     <th>Tanggal Kirim</th>
                                     <th class="text-center">Aksi</th>
@@ -247,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function() {
             data: {
                 labels: ["0-50 (Remedial)", "51-70 (Cukup)", "71-85 (Baik)", "86-100 (Sempurna)"],
                 datasets: [{
-                    label: "Jumlah Siswa",
+                    label: "Jumlah Murid",
                     backgroundColor: "#4e73df",
                     hoverBackgroundColor: "#2e59d9",
                     borderColor: "#4e73df",

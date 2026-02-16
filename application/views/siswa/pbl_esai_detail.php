@@ -20,7 +20,7 @@
 							<thead class="table-light">
 								<tr>
 									<th width="10%">No</th>
-									<th>Pertanyaan</th>
+									<th>Soal</th>
 								</tr>
 							</thead>
 							<tbody></tbody>
@@ -33,19 +33,19 @@
 		<div class="col-lg-5 mb-4">
 			<div class="card shadow-sm border-0 h-100">
 				<div class="card-header bg-white py-3">
-					<h5 class="card-title mb-0 text-success"><i class="bi bi-pencil-square"></i> Lembar Jawaban</h5>
+					<h5 class="card-title mb-0 text-success"><i class="bi bi-pencil-square"></i> Jawab Soal</h5>
 				</div>
 				<div class="card-body">
 					<div class="mb-4">
-						<h6>Status Pengumpulan:</h6>
+						<h6>Status Pengerjaan:</h6>
 						<?php if ($submission): ?>
 							<div class="alert alert-success d-flex align-items-center" role="alert">
 								<i class="bi bi-check-circle-fill me-2"></i>
-								<div>Sudah dikumpulkan pada <br><small><?= date('d M Y H:i', strtotime($submission->created_at)); ?></small></div>
+								<div>Sudah dikerjakan pada <br><small><?= date('d-m-Y H:i', strtotime($submission->created_at)); ?></small></div>
 							</div>
 							<?php else: ?>
-								<div class="alert alert-warning d-flex align-items-center" role="alert">
-									<i class="bi bi-exclamation-triangle-fill me-2"></i>
+								<div class="alert alert-danger d-flex align-items-center" role="alert">
+									<i class="bi bi-exclamation-circle me-2"></i>
 									<div>Belum mengumpulkan jawaban.</div>
 								</div>
 							<?php endif; ?>
@@ -68,7 +68,7 @@
 						<div class="d-grid gap-2">
 							<?php 
 							$is_graded = ($submission && $submission->grade !== null);
-							$btn_text = $submission ? 'Edit Jawaban' : 'Kerjakan Esai';
+							$btn_text = $submission ? 'Edit Jawaban' : 'Jawab Soal';
 							$btn_cls = $submission ? 'btn-outline-primary' : 'btn-primary';
 							
                         // Siapkan data untuk JS
@@ -83,11 +83,11 @@
 									<i class="bi bi-send"></i> <?= $btn_text; ?>
 								</button>
 								<?php else: ?>
-									<button class="btn btn-secondary" disabled>
+									<!-- <button class="btn btn-secondary" disabled>
 										<i class="bi bi-lock"></i> Jawaban Terkunci (Sudah Dinilai)
-									</button>
+									</button> -->
 									<button class="btn btn-info text-dark mt-2" data-bs-toggle="modal" data-bs-target="#readOnlyModal">
-										<i class="bi bi-eye"></i> Lihat Jawaban Saya
+										<i class="bi bi-eye"></i> Periksa
 									</button>
 								<?php endif; ?>
 							</div>
@@ -102,7 +102,7 @@
 				<div class="modal-content">
 					<form id="answerForm">
 						<div class="modal-header bg-primary text-white">
-							<h5 class="modal-title" id="answerModalLabel">Form Jawaban</h5>
+							<h5 class="modal-title" id="answerModalLabel">Jawab Esai</h5>
 							<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 						</div>
 						<div class="modal-body">

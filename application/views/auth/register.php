@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Daftar Akun Siswa | RiyonClass</title>
+	<title>Daftar Akun Murid | RiyonClass</title>
 
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 
@@ -168,7 +168,7 @@
 					<div class="row g-0">
 
 						<div class="col-lg-5 d-none d-lg-block bg-light brand-side">
-							<h2>Halo, Siswa Hebat!</h2>
+							<h2>Halo, Murid Hebat!</h2>
 							<p class="text-muted mb-4">Buat akunmu sekarang dan mulai petualangan belajar yang seru di RiyonClass.</p>
 
 							<ul class="feature-list">
@@ -195,7 +195,7 @@
 						<div class="col-lg-7 p-4 p-md-5">
 							<div class="text-center mb-4 d-lg-none">
 								<h3 class="fw-bold text-primary">RiyonClass</h3>
-								<p class="text-muted">Buat Akun Siswa Baru</p>
+								<p class="text-muted">Buat Akun Murid Baru</p>
 							</div>
 
 							<div class="d-none d-lg-block mb-4">
@@ -213,12 +213,12 @@
 							<?php if (isset($is_quota_full) && $is_quota_full): ?>
 							    <div class="alert alert-warning border-0 shadow-sm">
 							        <i class="bi bi-exclamation-circle-fill me-2"></i>
-							        <strong>Pendaftaran Tutup!</strong> Kuota harian (<?= $limit  ?> siswa) telah terpenuhi. Silakan kembali besok.
+							        <strong>Pendaftaran Tutup!</strong> Kuota harian (<?= $limit  ?> murid) telah terpenuhi. Silakan kembali besok.
 							    </div>
 							<?php elseif(isset($remaining_quota)): ?>
 							     <div class="alert alert-info border-0 shadow-sm py-2 small">
 							        <i class="bi bi-info-circle me-1"></i>
-							        Sisa kuota hari ini: <strong><?= $remaining_quota ?></strong> siswa.
+							        Sisa kuota hari ini: <strong><?= $remaining_quota ?></strong> murid.
 							    </div>
 							<?php endif; ?>
 

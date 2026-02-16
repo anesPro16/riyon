@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // --- 4. Teks Spesifik ---
         modalTitles: {
-            add: 'Tambah Kelas Baru',
+            add: 'Tambah Kelas',
             edit: 'Edit Data Kelas'
         },
         deleteNameField: 'name', 

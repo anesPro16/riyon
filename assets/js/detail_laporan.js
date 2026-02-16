@@ -14,7 +14,7 @@ class ManualTableHandler extends CrudHandler {
 			tbody.innerHTML = ''; 
 
 			if (!data || data.length === 0) {
-				tbody.innerHTML = '<tr><td colspan="100%" class="p-3">Belum ada data siswa.</td></tr>';
+				tbody.innerHTML = '<tr><td colspan="100%" class="p-3">Belum ada data murid.</td></tr>';
 				return;
 			}
 
@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			save: `guru/laporan/save_reflection`,
 			delete: null 
 		},
-		modalTitles: { edit: 'Input Refleksi & Feedback' },
+		modalTitles: { edit: 'Buat Catatan & Feedback' },
 
         // === MAPPING DATA ===
         dataMapper: (student, index) => {
@@ -140,7 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const obsData  = calculateAverageBySubject(student.obs_data);
             const essayData = calculateAverageBySubject(student.essay_data);
 
-            let allScores = []; // Untuk hitung Grand Total per siswa
+            let allScores = []; // Untuk hitung Grand Total per murid
             let columns = [];
 
             // 2. Loop Mapel untuk membuat 5 Kolom (UTS, UAS, Kuis, Obs, Esai)
@@ -172,7 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // 4. Tombol Aksi
             const hasReflection = (student.teacher_reflection || student.student_feedback);
             const btnClass = hasReflection ? 'btn-warning' : 'btn-primary';
-            const btnText = hasReflection ? 'Edit' : 'Input';
+            const btnText = hasReflection ? 'Edit' : 'Buat';
             
             const btn = `
             <button type="button" class="btn btn-sm ${btnClass} btn-edit"

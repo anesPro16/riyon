@@ -51,7 +51,7 @@
           <thead class="table-light">
             <tr>
               <th width="5%">No</th>
-              <th width="25%">Judul Masalah</th>
+              <th width="25%">Judul Materi</th>
               <th width="40%">Deskripsi</th>
               <th width="15%">File</th>
               <?php if ($is_admin_or_guru): ?>
@@ -89,11 +89,11 @@
 
           <div class="mb-3">
             <label for="pblReflection" class="form-label fw-bold">Deskripsi</label>
-            <textarea class="form-control" name="reflection" id="pblReflection" rows="4" placeholder="Deskripsikan masalah" required></textarea>
+            <textarea class="form-control" name="reflection" id="pblReflection" rows="4" placeholder="Deskripsikan Materi" required></textarea>
           </div>
 
           <div class="mb-3">
-            <label for="pblFile" class="form-label fw-bold">Upload Materi</label>
+            <label for="pblFile" class="form-label fw-bold">Upload File</label>
             <input type="file" class="form-control" name="file" id="pblFile" accept=".jpg,.jpeg,.png,.pdf,.mp4">
             <div class="form-text text-xs">Format: JPG, PDF, MP4. Maks 5MB.</div>
           </div>

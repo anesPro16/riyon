@@ -191,7 +191,7 @@
 					<div class="branding-divider"></div>
 					<p class="branding-desc">
 						Selamat datang di Dashboard Staf. <br>
-						Kelola materi, pantau aktivitas siswa, dan dukung pembelajaran digital yang lebih interaktif dan efisien dalam satu platform terintegrasi.
+						Kelola materi, pantau aktivitas murid, dan dukung pembelajaran digital yang lebih interaktif dan efisien dalam satu platform terintegrasi.
 					</p>
 				</div>
 

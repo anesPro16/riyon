@@ -42,8 +42,8 @@ canvas {
         <?php
   $cards = [
     ['Users', $total_users, 'primary', 'bi-people-fill'],
-    ['Guru', $total_teachers, 'success', 'bi-person-badge-fill'],
-    ['Siswa', $total_students, 'info', 'bi-mortarboard-fill'],
+    ['Guru', $total_teachers, 'success', 'bi-person-bounding-box'],
+    ['Murid', $total_students, 'info', 'bi-mortarboard-fill'],
     ['Kelas', $total_classes, 'warning', 'bi-door-open-fill'],
     ['Quiz PBL', $total_quizzes, 'secondary', 'bi-lightbulb-fill'],
     ['UTS / UAS', $total_exams, 'danger', 'bi-journal-check'],
@@ -79,7 +79,7 @@ canvas {
 
         <div class="col-lg-4">
             <div class="card dashboard-card">
-                <div class="card-header">Guru vs Siswa</div>
+                <div class="card-header">Guru vs Murid</div>
                 <div class="card-body">
                     <canvas id="chartTeacherStudent"></canvas>
                 </div>

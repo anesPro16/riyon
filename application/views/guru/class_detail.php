@@ -10,7 +10,7 @@
 					</h2>
 					<div class="d-flex align-items-center text-secondary">
 						<i class="bi bi-person-badge me-2 fs-5"></i>
-						<span>Guru Pengampu: <strong class="text-dark"><?= htmlspecialchars($kelas->teacher_name, ENT_QUOTES, 'UTF-8'); ?></strong></span>
+						<span>Guru: <strong class="text-dark"><?= htmlspecialchars($kelas->teacher_name, ENT_QUOTES, 'UTF-8'); ?></strong></span>
 					</div>
 				</div>
 
@@ -23,7 +23,7 @@
 							</span>
 							<span class="badge bg-white text-dark border shadow-sm">
 								<i class="bi bi-people-fill me-1 text-primary"></i> 
-								<span id="jumlah-siswa"><?= $kelas->student_count; ?></span> Siswa
+								<span id="jumlah-siswa"><?= $kelas->student_count; ?></span> Murid
 							</span>
 						</div>
 					</div>
@@ -53,13 +53,13 @@
 		<div class="card border-0 shadow-sm">
 			<div class="card-header bg-white py-3 px-4 d-flex justify-content-between align-items-center border-bottom">
 				<div>
-					<h5 class="m-0 fw-bold text-dark">Daftar Siswa</h5>
-					<small class="text-muted">Data siswa yang terdaftar di kelas ini</small>
+					<h5 class="m-0 fw-bold text-dark">Daftar Murid</h5>
+					<small class="text-muted">Data Murid yang terdaftar di kelas ini</small>
 				</div>
 
 				<?php if (isset($can_manage_students) && $can_manage_students === true): ?>
 					<button class="btn btn-success btn-sm px-3" id="btnAddStudent" data-bs-toggle="modal" data-bs-target="#siswaModal">
-						<i class="bi bi-person-plus-fill me-1"></i> Tambah Siswa
+						<i class="bi bi-person-plus-fill me-1"></i> Tambah Murid
 					</button>
 				<?php endif; ?>
 			</div>
@@ -70,7 +70,7 @@
 						<thead class="bg-light">
 							<tr>
 								<th class="py-3 px-4 text-secondary text-uppercase small fw-bold border-bottom-0" style="width: 5%;">No</th>
-								<th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Nama Lengkap</th>
+								<th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Nama</th>
 								<th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Username</th>
 								<th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Email</th>
 
@@ -96,7 +96,7 @@
 					<form id="studentForm">
 						<div class="modal-header bg-light border-bottom-0">
 							<h5 class="modal-title fw-bold" id="siswaModalLabel">
-								<i class="bi bi-person-plus text-primary me-2"></i>Tambah Siswa
+								<i class="bi bi-person-plus text-primary me-2"></i>Tambah Murid
 							</h5>
 							<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 						</div>
@@ -106,16 +106,16 @@
 							<input type="hidden" name="class_id" id="classIdHidden" value="<?= $kelas->id; ?>">
 
 							<div class="mb-3">
-								<label for="studentSelect" class="form-label fw-semibold">Pilih Siswa</label>
+								<label for="studentSelect" class="form-label fw-semibold">Pilih Murid</label>
 								<select class="form-select form-select-lg" id="studentSelect" name="student_id" required>
-									<option value="">-- Cari Nama Siswa --</option>
+									<option value="">-- Cari Nama Murid --</option>
 									<?php foreach($siswa_list as $s): ?>
 										<option value="<?= $s->id; ?>">
 											<?= htmlspecialchars($s->name, ENT_QUOTES, 'UTF-8'); ?> (<?= htmlspecialchars($s->username, ENT_QUOTES, 'UTF-8'); ?>)
 										</option>
 									<?php endforeach; ?>
 								</select>
-								<div class="form-text text-muted"><i class="bi bi-info-circle me-1"></i> Menampilkan semua siswa yang belum memiliki kelas.</div>
+								<div class="form-text text-muted"><i class="bi bi-info-circle me-1"></i> Menampilkan semua murid yang belum memiliki kelas.</div>
 							</div>
 						</div>
 
@@ -138,7 +138,7 @@
 
     // Konfigurasi Dinamis dari Controller
     window.CURRENT_CLASS_ID = '<?= $kelas->id; ?>';
-    // Apakah user saat ini boleh menambah/menghapus siswa?
+    // Apakah user saat ini boleh menambah/menghapus murid?
     window.CAN_MANAGE_STUDENTS = <?= (isset($can_manage_students) && $can_manage_students === true) ? 'true' : 'false' ?>;
     // Controller mana yang dipakai? 'admin' atau 'guru'
     window.ROLE_CONTROLLER = '<?= isset($role_controller) ? $role_controller : 'guru' ?>';

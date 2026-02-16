@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // ============================================================
-  // 1. KONFIGURASI TABEL PERTANYAAN (CRUD Lengkap)
+  // 1. KONFIGURASI TABEL SOAL (CRUD Lengkap)
   // ============================================================
   const questionConfig = {
     baseUrl: window.BASE_URL,
-    entityName: 'Pertanyaan',
+    entityName: 'Soal',
     modalId: 'questionModal',
     formId: 'questionForm',
     modalLabelId: 'questionModalLabel',
@@ -32,12 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     deleteMethod: 'POST',
     modalTitles: {
-      add: 'Tambah Pertanyaan Baru',
-      edit: 'Edit Pertanyaan'
+      add: 'Tambah Soal Baru',
+      edit: 'Edit Soal'
     },
     deleteNameField: 'question', 
 
-    // Mapper Pertanyaan
+    // Mapper Soal
     dataMapper: (q, i) => [
       i + 1,
       q.question_text.length > 60 ? q.question_text.substring(0, 60) + '...' : q.question_text,
@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // Init Handler Pertanyaan
+  // Init Handler Soal
   const questionHandler = new CrudHandler(questionConfig);
   questionHandler.init();
 

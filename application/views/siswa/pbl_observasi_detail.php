@@ -22,7 +22,7 @@
 						<p class="card-text fst-italic bg-light p-3 rounded">
 							<?= !empty($result->feedback) ? nl2br(htmlspecialchars($result->feedback)) : 'Belum ada umpan balik tertulis.'; ?>
 						</p>
-						<small class="text-muted">Dinilai pada: <?= date('d M Y, H:i', strtotime($result->created_at)); ?></small>
+						<small class="text-muted">Telah dinilai: <?= date('d-m-Y, H:i', strtotime($result->created_at)); ?></small>
 					</div>
 				</div>
 			</div>
@@ -55,7 +55,7 @@
 					<thead class="table-light">
 						<tr>
 							<th style="width: 5%;">No</th>
-							<th>Nama File Asli</th>
+							<th>Dokumen</th>
 							<th>Keterangan</th>
 							<th>Tanggal Upload</th>
 							<th style="width: 15%;">Aksi</th>

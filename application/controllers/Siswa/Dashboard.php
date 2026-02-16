@@ -11,7 +11,7 @@ class Dashboard extends CI_Controller {
 
 	public function index()
     {
-        $data['title'] = 'Dashboard Siswa';
+        $data['title'] = 'Dashboard Murid';
         
         // Ambil data session
         $user_id = $this->session->userdata('user_id');
@@ -47,7 +47,7 @@ class Dashboard extends CI_Controller {
     if ($role != 'Siswa') redirect('siswa');
 
     $data['classes'] = $this->Murid_model->get_classes_by_student($user_id);
-    $data['role_label'] = 'Siswa';
+    $data['role_label'] = 'Kelas';
     $data['url_name'] = 'siswa';
 
     // Hitung statistik sederhana untuk Info Card Header
@@ -90,7 +90,7 @@ class Dashboard extends CI_Controller {
         $data['siswa_list'] = $this->User_model->get_students_by_role_name('siswa');
     }
     
-    $data['title'] = 'Detail Kelas: ' . $data['kelas']->name;
+    $data['title'] = 'Halaman Detail Kelas';
     $data['user'] = $this->session->userdata();
 
     $this->load->view('templates/header', $data);

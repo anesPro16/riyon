@@ -4,7 +4,7 @@
         <div class="col-lg-12">
 
             <button class="btn btn-primary mb-3" id="btnAddClass">
-                <i class="fas fa-plus"></i> Tambah Kelas Baru
+                <i class="fas fa-plus"></i> Tambah Kelas
             </button>
             <input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
             <div class="card shadow mb-4">
@@ -17,9 +17,9 @@
                             <thead>
                                 <tr>
                                     <th style="width: 5%;">No</th>
-                                    <th>Nama Kelas</th>
+                                    <th>Kelas</th>
                                     <th>Kode Kelas</th>
-                                    <th>Guru Pengampu</th>
+                                    <th>Guru</th>
                                     <th width="29%">Aksi</th>
                                 </tr>
                             </thead>
@@ -51,12 +51,12 @@
 
                 <div class="modal-body">
                     <div class="mb-3">
-                        <label for="className" class="form-label">Nama Kelas</label>
-                        <input type="text" class="form-control" id="className" name="name" required placeholder="Contoh: X IPA 1">
+                        <label for="className" class="form-label">Kelas</label>
+                        <input type="text" class="form-control" id="className" name="name" required placeholder="Contoh: 5A">
                     </div>
 
                     <div class="mb-3">
-                        <label for="teacherId" class="form-label">Guru Pengampu</label>
+                        <label for="teacherId" class="form-label">Guru</label>
                         <select class="form-select" id="teacherId" name="teacher_id" required>
                             <option value="">-- Pilih Guru --</option>
                             <?php foreach ($teachers as $t): ?>

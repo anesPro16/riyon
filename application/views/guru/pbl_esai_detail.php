@@ -164,7 +164,7 @@
             <div class="card border-0 shadow-sm">
                 <div class="card-header bg-white py-3 px-4 border-bottom">
                     <h6 class="m-0 fw-bold text-success">
-                        <i class="bi bi-people-fill me-2"></i> Jawaban & Nilai Siswa
+                        <i class="bi bi-people-fill me-2"></i> Jawaban & Nilai Murid
                     </h6>
                 </div>
                 <div class="card-body p-0" id="gradingTableContainer">
@@ -173,8 +173,8 @@
                             <thead class="bg-light">
                                 <tr>
                                     <th class="py-3 px-4 text-secondary text-uppercase small fw-bold border-bottom-0" width="5%">No</th>
-                                    <th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Nama Siswa</th>
-                                    <th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Waktu Kirim</th>
+                                    <th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Nama</th>
+                                    <th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0">Waktu Mengumpulkan</th>
                                     <th class="py-3 text-secondary text-uppercase small fw-bold border-bottom-0 text-center">Nilai</th>
                                     <th class="py-3 px-4 text-secondary text-uppercase small fw-bold border-bottom-0 text-center" width="15%">Aksi</th>
                                 </tr>
@@ -199,7 +199,7 @@
                         <h5 class="modal-title fw-bold text-dark" id="questionModalLabel">
                             <i class="bi bi-pencil-square text-primary me-2"></i>Form Soal Esai
                         </h5>
-                        <p class="text-muted small mb-0 mt-1">Tambahkan atau edit pertanyaan esai di bawah ini.</p>
+                        <p class="text-muted small mb-0 mt-1">Tambahkan atau edit soal esai di bawah ini.</p>
                     </div>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
@@ -222,7 +222,7 @@
                 <div class="modal-footer border-top-0 px-4 pb-4 pt-2 bg-white">
                     <button type="button" class="btn btn-light text-secondary px-4 fw-medium" data-bs-dismiss="modal">Batal</button>
                     <button type="submit" class="btn btn-primary px-4 fw-bold shadow-sm">
-                        <i class="bi bi-save me-1"></i> Simpan Perubahan
+                        <i class="bi bi-save me-1"></i> Simpan
                     </button>
                 </div>
             </form>
@@ -274,7 +274,7 @@
 
                             <div class="mb-3">
                                 <label class="form-label fw-semibold text-secondary small text-uppercase">Catatan</label>
-                                <textarea name="feedback" id="feedbackInput" class="form-control bg-light" rows="8" placeholder="Tuliskan masukan untuk siswa di sini..."></textarea>
+                                <textarea name="feedback" id="feedbackInput" class="form-control bg-light" rows="8" placeholder="Tuliskan masukan untuk murid di sini..."></textarea>
                             </div>
                         </div>
                     </div>

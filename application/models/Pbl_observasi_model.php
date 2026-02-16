@@ -146,6 +146,13 @@ class Pbl_observasi_model extends CI_Model
     return $this->db->delete($this->table_results);
   }
 
+  public function delete_grade_by_observation_id_by_user_id($id, $user_id)
+  {
+    $this->db->where('observation_id', $id);
+    $this->db->where('user_id', $user_id);
+    return $this->db->delete($this->table_results);
+  }
+
 }
 
 /* End of file Pbl_observasi_model.php */

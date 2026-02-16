@@ -29,7 +29,7 @@ class Pbl_esai extends CI_Controller
     // Ambil data submission siswa (jika ada)
     $submission = $this->Esai_model->get_student_submission($essay_id, $this->user_id);
     
-    $data['title'] = 'Jawab Esai: ' . $essay->title;
+    $data['title'] = 'Halaman Detail Esai';
     $data['essay'] = $essay;
     $data['submission'] = $submission;
     $data['class_id'] = $essay->class_id;

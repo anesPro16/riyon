@@ -32,6 +32,14 @@
       <a href="<?= base_url('guru/laporan'); ?>" class="btn btn-primary btn-sm">
         <i class="bi bi-arrow-left"></i> Kembali
       </a>
+
+      <a href="<?= base_url('guru/laporan/export_excel/' . $class_id); ?>" target="_blank" class="btn btn-success btn-sm">
+        <i class="bi bi-file-earmark-excel"></i> Export Excel
+      </a>
+
+      <a href="<?= base_url('guru/laporan/cetak_pdf/' . $class_id); ?>" target="_blank" class="btn btn-danger btn-sm">
+        <i class="bi bi-printer"></i> Cetak PDF
+      </a>
     </div>
   </div>
 
@@ -39,7 +47,7 @@
   
   <div class="card shadow-sm">
     <div class="card-header bg-white">
-      <h5 class="m-0 font-weight-bold text-primary"><i class="bi bi-table me-2"></i> Rekapitulasi Nilai Akhir (Rata-rata)</h5>
+      <h5 class="m-0 font-weight-bold text-primary"><i class="bi bi-table me-2"></i> Rekapitulasi Nilai Akhir</h5>
     </div>
 
     <div class="card-body p-3">
@@ -49,7 +57,7 @@
           <thead>
             <tr class="bg-header-main">
               <th rowspan="2" width="40">No.</th>
-              <th rowspan="2" style="min-width: 150px; text-align: left;">Nama Siswa</th>
+              <th rowspan="2" style="min-width: 150px; text-align: left;">Nama</th>
               
               <?php if(!empty($exam_subjects)) : ?>
                 <?php $i = 0; foreach($exam_subjects as $subject): $i++; 
@@ -94,7 +102,7 @@
     <div class="modal-content">
       <form id="refleksiForm" autocomplete="off">
         <div class="modal-header bg-primary text-white">
-          <h5 class="modal-title" id="refleksiModalLabel">Input Refleksi</h5>
+          <h5 class="modal-title" id="refleksiModalLabel">Buat Catatan</h5>
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
         </div>
         <div class="modal-body">
@@ -102,16 +110,16 @@
           <input type="hidden" name="user_id" id="modalUserId">
           <input type="hidden" name="class_id" value="<?= $class_id; ?>">
           <div class="mb-3">
-            <label class="fw-bold">Siswa:</label>
+            <label class="fw-bold">Murid:</label>
             <input type="text" class="form-control-plaintext fw-bold" id="modalStudentName" readonly>
           </div>
           <div class="row">
             <div class="col-md-6 mb-3">
-              <label>Refleksi Guru</label>
+              <label>Catatan Guru</label>
               <textarea name="teacher_reflection" class="form-control" rows="4"></textarea>
             </div>
             <div class="col-md-6 mb-3">
-              <label>Feedback Siswa</label>
+              <label>Feedback Murid</label>
               <textarea name="student_feedback" class="form-control" rows="4"></textarea>
             </div>
           </div>

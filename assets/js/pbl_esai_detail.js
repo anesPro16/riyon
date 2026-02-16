@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     textarea.name = 'question_text[]'; 
     textarea.className = 'form-control border-start-0'; // border-start-0 agar menyatu dengan icon
     textarea.rows = 2; // Tinggi default
-    textarea.placeholder = 'Tuliskan pertanyaan esai di sini...';
+    textarea.placeholder = 'Tuliskan soal esai di sini...';
     textarea.value = value;
     textarea.required = true;
     textarea.style.resize = 'vertical'; // User bisa resize vertikal saja
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================
-  // 1. INSTANCE CRUD: DAFTAR PERTANYAAN
+  // 1. INSTANCE CRUD: DAFTAR SOAL
   // ==========================================
   const questionConfig = {
     baseUrl: window.BASE_URL,

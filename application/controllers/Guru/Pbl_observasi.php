@@ -52,7 +52,7 @@ class Pbl_observasi extends CI_Controller
 
         if ($getData) {
             $this->Pbl_observasi_model->delete_upload($id);
-            $this->Pbl_observasi_model->delete_grade_by_observation_id($getData->observation_id);
+            $this->Pbl_observasi_model->delete_grade_by_observation_id_by_user_id($getData->observation_id, $getData->user_id);
             $response = ['status' => 'success', 'message' => 'File observasi berhasil dihapus.'];
         } else {
             $response = ['status' => 'error', 'message' => 'ID tidak valid.'];

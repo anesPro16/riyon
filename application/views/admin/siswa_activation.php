@@ -3,8 +3,7 @@
 
         <div class="card shadow mb-4">
             <div class="card-header py-3 d-flex justify-content-between align-items-center">
-                <h6 class="m-0 font-weight-bold text-primary">Data Aktivasi Akun Siswa</h6>
-                <button class="btn btn-sm btn-secondary" onclick="window.location.reload()"><i class="fas fa-sync"></i> Refresh</button>
+                <h6 class="m-0 font-weight-bold text-primary">Data Aktivasi Akun Murid</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -12,7 +11,7 @@
                         <thead class="table-light">
                             <tr>
                                 <th style="width: 5%;">No</th>
-                                <th>Nama Siswa</th>
+                                <th>Nama</th>
                                 <th>Status</th>
                                 <th style="width: 15%;">Aksi</th>
                             </tr>
@@ -31,7 +30,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="activationModalLabel">Edit Status Siswa</h5>
+                <h5 class="modal-title" id="activationModalLabel">Edit Status Murid</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form id="activationForm">
@@ -40,7 +39,7 @@
                     <input type="hidden" name="id" id="userId">
 
                     <div class="mb-3">
-                        <label for="userName" class="form-label">Nama Siswa</label>
+                        <label for="userName" class="form-label">Nama Murid</label>
                         <input type="text" class="form-control" id="userName" readonly disabled>
                         <small class="text-muted">Nama tidak dapat diubah di menu ini.</small>
                     </div>
@@ -52,7 +51,7 @@
                                 Akun Aktif?
                             </label>
                         </div>
-                        <small class="text-muted">Jika dinonaktifkan, siswa tidak bisa login.</small>
+                        <small class="text-muted">Jika dinonaktifkan, murid tidak bisa login.</small>
                     </div>
 
                 </div>

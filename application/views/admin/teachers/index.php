@@ -4,7 +4,7 @@
 		<div class="col-lg-12">
 
 			<button class="btn btn-primary mb-3" id="btnAddTeacher">
-				<i class="fas fa-user-plus"></i> Tambah Guru Baru
+				<i class="fas fa-user-plus"></i> Tambah Guru
 			</button>
 
 			<div class="card shadow mb-4">

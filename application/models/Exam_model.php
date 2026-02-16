@@ -39,6 +39,23 @@ class Exam_model extends CI_Model
       ->delete($this->table);
   }
 
+  // ---  KHUSUS ADMIN ---
+
+  // Mengambil daftar kelas milik Admin (berdasarkan user_id di tabel classes)
+  public function get_admin_classes($admin_id)
+  {
+    return $this->db->get_where('classes', ['user_id' => $admin_id])->result();
+  }
+
+  // Cek apakah Kelas ini dibuat/dimiliki oleh Admin yang sedang login
+  public function is_admin_class($class_id, $admin_id)
+  {
+    return $this->db
+      ->where('id', $class_id)
+      ->where('user_id', $admin_id) // user_id di table classes adalah Admin
+      ->count_all_results('classes') > 0;
+  }
+
  	public function getTeacherId($user_id)
 {
     $query = $this->db

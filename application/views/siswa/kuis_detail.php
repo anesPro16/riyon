@@ -118,7 +118,7 @@
                 <div class="score-card shadow text-center">
                     <div class="row align-items-center">
                         <div class="col-md-4 mb-3 mb-md-0">
-                            <h5 class="text-white-50 text-uppercase mb-2">Nilai Akhir</h5>
+                            <h5 class="text-white-50 text-uppercase mb-2">Nilai Anda</h5>
                             <div class="score-circle">
                                 <?= $result->score; ?>
                             </div>
@@ -134,7 +134,7 @@
                                 </div>
                                 <div class="bg-white bg-opacity-10 px-4 py-2 rounded-3">
                                     <span class="d-block small text-white-50">Total Soal</span>
-                                    <span class="fs-4 fw-bold"><i class="bi bi-list-ol me-1"></i> <?= $result->total_questions; ?></span>
+                                    <span class="fs-4 fw-bold"><i class="bi bi-justify me-1"></i> <?= $result->total_questions; ?></span>
                                 </div>
                             </div>
                         </div>
@@ -169,7 +169,7 @@
                 <div class="card-body p-4 text-center">
                     <p class="text-muted mb-3">Pastikan semua jawaban telah terisi sebelum mengirim.</p>
                     <button type="submit" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm" id="btnSubmitQuiz">
-                        <i class="bi bi-send-fill me-2"></i> Kirim Jawaban Saya
+                        <i class="bi bi-send-fill me-2"></i> Selesai
                     </button>
                 </div>
             </div>

@@ -21,7 +21,7 @@
 
       <?php else: ?>
         <a href="<?= base_url('exam/student_list/' . $class_id); ?>" class="btn btn-primary btn-sm">
-          <i class="bi bi-list-task"></i>Ujian
+          <i class="bi bi-list-task"></i> Ujian
         </a>
       <?php endif ?>
       <!-- <a href="<?= base_url($url_name . '/pbl/tahap5/' . $class_id); ?>" class="btn btn-primary btn-sm">
@@ -56,7 +56,7 @@
           <thead class="table-light">
             <tr>
               <th style="width:60px">No</th>
-              <th>Judul</th>
+              <th>Esai</th>
               <th>Mata Pelajaran</th>
               <th class="aksi">Aksi</th>
             </tr>
@@ -84,7 +84,7 @@
           <input type="hidden" name="class_id" value="<?= $class_id; ?>">
           
           <div class="mb-3">
-            <label for="esaiTitle" class="form-label">Judul Esai</label>
+            <label for="esaiTitle" class="form-label">Esai</label>
             <input type="text" name="title" id="esaiTitle" class="form-control" required>
           </div>
           <div class="mb-3">

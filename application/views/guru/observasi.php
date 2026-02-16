@@ -46,7 +46,7 @@
           <thead class="table-light">
             <tr>
               <th width="6%">No</th>
-              <th>Judul</th>
+              <th>Ruang</th>
               <th>Mata Pelajaran</th>
               <th>Instruksi</th>
               <th class="aksi">Aksi</th>
@@ -75,7 +75,7 @@
           <input type="hidden" name="class_id" value="<?= $class_id; ?>">
           
           <div class="mb-3">
-            <label for="observasiTitle" class="form-label">Judul Ruang</label>
+            <label for="observasiTitle" class="form-label">Nama Ruang</label>
             <input type="text" name="title" id="observasiTitle" class="form-control" required>
           </div>
           <div class="mb-3">

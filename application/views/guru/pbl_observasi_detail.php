@@ -8,7 +8,7 @@
                         <i class="bi bi-clipboard-data me-2 text-primary"></i>Detail Observasi
                     </h5>
                     <p class="text-muted small mb-0">
-                        Kelola file yang diunggah siswa dan berikan penilaian serta umpan balik.
+                        Kelola file yang diunggah murid dan berikan penilaian serta umpan balik.
                     </p>
                 </div>
                 <div class="col-md-4 text-md-end mt-3 mt-md-0">

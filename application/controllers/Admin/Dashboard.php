@@ -509,7 +509,7 @@ class Dashboard extends CI_Controller {
     // Halaman View Utama
     public function activation()
     {
-        $data['title'] = 'Kelola Aktivasi Siswa';
+        $data['title'] = 'Kelola Aktivasi Murid';
         // Data user yang sedang login (Admin)
         $data['user'] = $this->db->get_where('users', ['username' => $this->session->userdata('username')])->row_array();
 

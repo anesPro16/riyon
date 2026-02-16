@@ -130,8 +130,8 @@ const openPreview = (url) => {
       	fileButton = `
       	<button class="btn btn-sm btn-info btn-preview" 
       	data-url="${fullUrl}" 
-      	title="Lihat Materi">
-      	<i class="bi bi-eye-fill"></i> Lihat
+      	title="Detail Materi">
+      	<i class="bi bi-eye-fill"></i> Detail
       	</button>
       	`;
       }

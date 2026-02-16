@@ -66,11 +66,11 @@
     <div class="col-lg-4 mb-4">
         <div class="card shadow-sm border-0 h-100">
             <div class="card-header bg-success py-3">
-                <h5 class="mb-0 card-title text-white"><i class="bi bi-chat-quote"></i> Refleksi Guru</h5>
+                <h5 class="mb-0 card-title text-white"><i class="bi bi-chat-quote"></i> Catatan Hasil Belajar</h5>
             </div>
-            <div class="card-body bg-light">
+            <div class="card-body bg-light my-2">
                 <div class="mb-4">
-                    <h6 class="fw-bold text-secondary text-uppercase small">Catatan Refleksi Guru</h6>
+                    <h6 class="fw-bold text-secondary text-uppercase small">Catatan Guru</h6>
                     <div class="p-3 bg-white rounded border shadow-sm" id="viewTeacherReflection" style="min-height: 100px; white-space: pre-wrap;">- Belum ada catatan -</div>
                 </div>
 

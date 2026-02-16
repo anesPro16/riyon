@@ -62,14 +62,6 @@
                             <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill fw-normal">
                                 <i class="bi bi-hash me-1"></i><?= htmlspecialchars($class->code); ?>
                             </span>
-                            <div class="dropdown">
-                                <button class="btn btn-sm btn-light rounded-circle" type="button" data-bs-toggle="dropdown">
-                                    <i class="bi bi-three-dots-vertical"></i>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end border-0 shadow">
-                                    <li><a class="dropdown-item" href="#"><i class="bi bi-info-circle me-2"></i>Detail Info</a></li>
-                                </ul>
-                            </div>
                         </div>
 
                         <div class="card-body">
@@ -92,7 +84,7 @@
 
                         <div class="card-footer bg-white border-0 pb-4 pt-0">
                             <a href="<?= base_url($url_name . '/dashboard/class_detail/' . $class->id) ?>" class="btn btn-primary w-100 py-2 rounded-3 fw-semibold shadow-sm btn-masuk">
-                                Masuk Kelas <i class="bi bi-arrow-right-short ms-1 fs-5 align-middle"></i>
+                                Masuk <i class="bi bi-arrow-right-short ms-1 fs-5 align-middle"></i>
                             </a>
                         </div>
                     </div>

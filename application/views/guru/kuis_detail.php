@@ -34,7 +34,7 @@
 
 	<div class="d-flex flex-wrap gap-2 mb-4">
 		<button class="btn btn-primary px-4" id="btnAddQuestion">
-			<i class="bi bi-plus-lg me-1"></i> Tambah Pertanyaan
+			<i class="bi bi-plus-lg me-1"></i> Tambah Soal
 		</button>
 		<div class="vr mx-2 d-none d-md-block text-muted"></div>
 		<a href="<?= base_url('guru/pbl_kuis/export_quiz/' . $quiz->quiz_id) ?>" class="btn btn-success text-white">
@@ -50,7 +50,7 @@
 			<div class="card border-0 shadow-sm h-100">
 				<div class="card-header bg-white py-3 border-bottom">
 					<h5 class="m-0 fw-bold text-primary">
-						<i class="bi bi-list-check me-2"></i> Daftar Pertanyaan
+						<i class="bi bi-list-check me-2"></i> Daftar Soal
 					</h5>
 				</div>
 				<div class="card-body p-0 kuisContainer">
@@ -59,8 +59,8 @@
 							<thead class="bg-light">
 								<tr>
 									<th class="text-secondary text-uppercase small fw-bold py-3 px-3" width="5%">No</th>
-									<th class="text-secondary text-uppercase small fw-bold py-3">Pertanyaan</th>
-									<th class="text-secondary text-uppercase small fw-bold py-3 text-center" width="10%">Kunci</th>
+									<th class="text-secondary text-uppercase small fw-bold py-3">Soal</th>
+									<th class="text-secondary text-uppercase small fw-bold py-3 text-center" width="10%">Kunci Jawaban</th>
 									<th class="text-secondary text-uppercase small fw-bold py-3 text-center px-3" width="15%">Aksi</th>
 								</tr>
 							</thead>
@@ -83,7 +83,7 @@
             <thead class="table-light">
               <tr>
                 <th width="6%">No</th>
-                <th>Siswa</th>
+                <th>Murid</th>
                 <th>Nilai</th>
                 <th>Waktu</th>
                 <th>Aksi</th>
@@ -107,7 +107,7 @@
 			<form id="questionForm">
 				<div class="modal-header bg-primary text-white">
 					<h5 class="modal-title fw-bold" id="questionModalLabel">
-						<i class="bi bi-pencil-square me-2"></i>Form Pertanyaan
+						<i class="bi bi-pencil-square me-2"></i>Form Soal
 					</h5>
 					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
@@ -117,8 +117,8 @@
 					<input type="hidden" name="<?= $this->security->get_csrf_token_name(); ?>" value="<?= $this->security->get_csrf_hash(); ?>">
 
 					<div class="mb-4">
-						<label for="question_text" class="form-label fw-bold">Teks Pertanyaan</label>
-						<textarea class="form-control" id="question_text" name="question_text" rows="3" placeholder="Tuliskan pertanyaan disini..." required></textarea>
+						<label for="question_text" class="form-label fw-bold">Teks Soal</label>
+						<textarea class="form-control" id="question_text" name="question_text" rows="3" placeholder="Tuliskan Soal disini..." required></textarea>
 					</div>
 
 					<label class="form-label fw-bold mb-2">Pilihan Jawaban</label>
@@ -162,7 +162,7 @@
 				</div>
 				<div class="modal-footer bg-light">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
-					<button type="submit" class="btn btn-primary px-4">Simpan Pertanyaan</button>
+					<button type="submit" class="btn btn-primary px-4">Simpan Soal</button>
 				</div>
 			</form>
 		</div>
@@ -175,7 +175,7 @@
 			<form action="<?= base_url('guru/pbl_kuis/import_quiz'); ?>" method="post" enctype="multipart/form-data">
 				<div class="modal-header bg-info text-white">
 					<h5 class="modal-title fw-bold text-dark" id="importModalLabel">
-						<i class="bi bi-file-earmark-arrow-up me-2"></i>Import Pertanyaan
+						<i class="bi bi-file-earmark-arrow-up me-2"></i>Import Soal
 					</h5>
 					<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>

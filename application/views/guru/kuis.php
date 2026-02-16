@@ -81,7 +81,7 @@
           <thead class="table-light">
             <tr>
               <th width="6%">No</th>
-              <th>Judul</th>
+              <th>Kuis</th>
               <th>Mata Pelajaran </th>
               <!-- <th style="width:20%" class="aksi">Aksi</th> -->
               <th class="aksi">Aksi</th>
@@ -114,7 +114,7 @@
           <input type="hidden" name="class_id" id="quizClassId" value="<?= $class_id; ?>">
 
           <div class="mb-3">
-            <label class="form-label fw-semibold">Judul Kuis</label>
+            <label class="form-label fw-semibold">Kuis</label>
             <input type="text" name="title" id="quizTitle" class="form-control" required>
           </div>
 
